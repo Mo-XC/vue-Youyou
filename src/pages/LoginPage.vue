@@ -1,7 +1,7 @@
 <script setup>
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { login, getInfo } from "~/api/manager.js";
+import { login, getInfo } from "@/api/manager.js";
 import { ElNotification } from 'element-plus'
 import { useCookies } from '@vueuse/integrations/useCookies'
 
@@ -74,7 +74,7 @@ const onSubmit = () => {
           })
 
           // push方法跳转
-          router.push('/home')
+          router.push('/index')
         } else {
           // 后端登录逻辑错误，不是正确的用户名与密码
           ElNotification({
@@ -141,9 +141,9 @@ const onSubmit = () => {
             </template>
           </el-input>
         </el-form-item>
-        <el-form-item>
+        <el-form-item class="flex justify-center">
 <!--          round 圆形边角-->
-          <el-button round color="#626aef" class="w-[250px]" type="primary" @click="onSubmit">登录</el-button>
+          <el-button round color="#626aef" class="w-[250px]" type="primary"  @click="onSubmit">登录</el-button>
         </el-form-item>
       </el-form>
     </el-col>
@@ -158,10 +158,10 @@ const onSubmit = () => {
   @apply flex items-center justify-center;
 }
 .login-container .right {
- @apply flex-col bg-light-50;
+ @apply flex-col bg-gray-50;
 }
 .left>div>div:first-child {
-  @apply font-bold text-5xl text-light-50 mb-4;
+  @apply font-bold text-5xl text-white mb-4;
 }
 .left>div>div:last-child {
   @apply text-gray-200 text-sm;

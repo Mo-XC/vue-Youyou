@@ -1,33 +1,27 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import WindiCSS from 'vite-plugin-windicss'
+// 1. 已移除 WindiCSS 的导入
 import vueDevTools from 'vite-plugin-vue-devtools'
 import path from "path"
 
 export default defineConfig({
   plugins: [
-    vue(),
+    vue(), // 2. 确保 vue 插件存在
     vueDevTools(),
-    WindiCSS(),
+    // 3. 已移除 WindiCSS() 插件的调用
   ],
   resolve: {
     alias: {
-      "~": path.resolve(__dirname, "src")
+      "@": path.resolve(__dirname, "src")
     },
   },
   server: {
     proxy: {
-      // 处理登录等认证接口（路径保持不变）
-      '/api/auth': {
+      // 统一代理所有以 /api 开头的请求
+      '/api': {
         target: 'http://localhost:8080',
         changeOrigin: true,
-        // 不重写，因为后端已经是 /api/auth
-      },
-      // 处理管理接口（去掉 /api 前缀）
-      '/api/admin': {
-        target: 'http://localhost:8080',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''), // 去掉开头的 /api
+        rewrite: (path) => path.replace(/^\/api/, ''),
       }
     }
   }

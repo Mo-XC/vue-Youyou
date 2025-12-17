@@ -1,4 +1,4 @@
-import axios from '~/axios.js' // 这里拿到的是 axios.js 里面 export 出来的数据
+import axios from '@/axios.js' // 这里拿到的是 axios.js 里面 export 出来的数据
 
 export function login(username, password) {
     // 这里的/admin/login 就是请求的接口，前面的一大截在axios.js中定义了baseUIR
@@ -8,7 +8,7 @@ export function login(username, password) {
     const params = new URLSearchParams();
     params.append('username', username);
     params.append('password', password);
-    return axios.post('/admin/login', params, { // 接口文档中路径为 admin/login
+    return axios.post('/auth/login', params, { // 接口文档中路径为 admin/login
         headers : {
             // 后端只接受application/x-www-form-urlencoded格式的表单数据
             'Content-Type': 'application/x-www-form-urlencoded'

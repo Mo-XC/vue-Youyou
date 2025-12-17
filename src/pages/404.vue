@@ -1,5 +1,6 @@
 <script setup>
 
+import router from "@/router/index.js";
 </script>
 
 <template>
@@ -10,7 +11,7 @@
       sub-title="（这里大概率是ISTP睡觉的地方，请勿打扰，谢谢！）"
     >
       <template #extra>
-        <el-button type="primary" @click="$router.push('/')">回到首页</el-button>
+        <el-button type="primary" @click="router.push('/')">回到首页</el-button>
       </template>
     </el-result>
   </div>

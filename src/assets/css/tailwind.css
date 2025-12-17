@@ -1,0 +1,15 @@
+/* src/assets/css/tailwind.css */
+/* 1. 重置浏览器默认样式 (解决body边距问题) */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 2. Tailwind CSS 基础指令 (必须存在) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. 你可以在这里添加项目全局的自定义CSS规则 */
