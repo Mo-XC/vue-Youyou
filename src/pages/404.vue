@@ -7,7 +7,7 @@ import router from "@/router/index.js";
   <div>
     <el-result
       icon="warning"
-      title="不可以！这里不是正确的网页"
+      title="v50 go to KFC qwq 才能给你访问这个不存在的页面"
       sub-title="（这里大概率是ISTP睡觉的地方，请勿打扰，谢谢！）"
     >
       <template #extra>

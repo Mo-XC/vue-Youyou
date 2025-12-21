@@ -3,20 +3,23 @@ import {
     createWebHashHistory // 创建history模式
 } from 'vue-router'
 
-import Home from '@/pages/Home.vue'
 import LoginPage from '@/pages/LoginPage.vue'
 import NotFound from '@/pages/404.vue'
 import IndexPage from "@/pages/IndexPage.vue";
 import TestHomePage from "@/pages/TestHomePage.vue";
 import TestPaperPage from "@/pages/TestPaperPage.vue";
-import Result from "@/pages/Result.vue";
+import ResultPage from "@/pages/ResultPage.vue";
+import AboutPage from "@/pages/AboutPage.vue";
 
 const routes = [{
     path : '/',
     redirect : '/index'
 }, {
+    path: '/about',
+    component: AboutPage
+}, {
     path : '/result',
-    component: Result
+    component: ResultPage
 }, {
     path : '/test',
     component: TestPaperPage
@@ -26,9 +29,6 @@ const routes = [{
 },{
     path : '/index',
     component: IndexPage
-}, {
-    path : '/home',
-    component : Home
 }, {
     path : '/login',
     component : LoginPage
